@@ -1,0 +1,9 @@
+function bestprofit(array){
+    let minPrice = Infinity;
+    let maxProfit = 0;
+    for(let i=0; i<array.length; i++){
+        minPrice = Math.min(minPrice,array[i]);
+        maxProfit = Math.max(maxProfit,array[i]-minPrice);
+    }
+    return maxProfit;
+}
