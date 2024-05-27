@@ -1,0 +1,32 @@
+function quickSort(array){
+
+    function qS(array,low,high){
+        let pivot = array[low]; //pivot element
+        let i = low; //left 
+        let j = high; //right
+        while(i<j){ //iterate till array.length
+            while(array[i]<=pivot && i<high){ //if element is smaller than pivot increment the index of i and till last second element
+                i++;
+            }
+            while(array[j]>pivot && j>low){ //if element is greater than pivot element decrement the index of j and till second lement 
+                j--;
+            }
+            if(i<j){ //if i and j both pointers stopped, swap their value
+                [array[i],array[j]] = [array[j],array[i]];
+            }
+        }
+        [array[low],array[j]] = [array[j],array[low]]; /* if i crosses j or vice versa, swap the pivot element with element 
+        a jth index and pivot element will be it's correct place and become a partition indexed element. */
+        return j;
+    }
+    function quick(array,low,high){
+        if(low<high){ //condition is to not exceed the length of the array
+            partitionIndex = qS(array,low,high); //to know the updated index of the pivot element
+            quick(array,low,partitionIndex-1); //call itself from low to pIndex-1
+            quick(array,partitionIndex+1,high); //call itself from pIndex+1 to high pIndex is not included cz it is in correct place
+        }
+    }
+
+    quick(array,0,array.length-1); //calling the quick array with paremters where low=0 and high = array.length-1
+    return array;
+}
