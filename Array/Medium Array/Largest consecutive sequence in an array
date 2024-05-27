@@ -1,0 +1,18 @@
+function longestConsequence(array){
+    let n=array.length;
+    if(n===0)return 0;
+    let longest=1;
+    let aSet=new Set(array);
+    
+    for(let i of aSet){
+        let x=i;
+        if(!aSet.has(x-1)){
+            let count=1;
+            while(aSet.has(x+1)){
+                x+=1;
+                count+=1;
+            }
+            longest = Math.max(longest,count);
+        }
+    }return longest;
+}
