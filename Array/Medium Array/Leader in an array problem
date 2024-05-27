@@ -1,0 +1,11 @@
+function leader(array){
+    let n=array.length;
+    let max=n-1;
+    let leader=[array[n-1]];
+    for(let i=n-2;i>=0;i--){
+        if(array[i]>max){
+            max=array[i];
+            leader.push(max);        
+        }
+    }return leader;
+}
