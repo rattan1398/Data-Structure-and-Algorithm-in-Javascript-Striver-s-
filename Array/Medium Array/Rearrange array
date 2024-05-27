@@ -1,0 +1,15 @@
+function reArrange(array){
+    let reArranged=[];
+    
+    let posIndex=0;
+    let negIndex=1;
+    for(let i of array){
+        if(i>0){
+            reArranged[posIndex]=i;
+            posIndex+=2;
+        }else{
+            reArranged[negIndex]=i;
+            negIndex+=2;
+        }
+    }return reArranged;
+}
