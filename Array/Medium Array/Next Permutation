@@ -1,0 +1,24 @@
+function nextPermutation(array){
+    let index=0;
+    let n=array.length;
+
+    for(let i=n-2;  i>=0 ; i--) {
+        if(array[i] < array[i+1]) {
+            index=i;
+            break;
+        }
+    }
+    if(index === -1){
+        array.reverse();
+        return array;
+    }
+    for(let i=n-1;i>index;i--){
+        if(array[i]>array[index]){
+            [array[index],array[i]] = [array[i],array[index]];
+            break;
+        }
+    }
+
+    array.splice(index+1,n-1,...array.slice(index+1).reverse());
+    return array;
+}
