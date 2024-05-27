@@ -1,0 +1,21 @@
+function majorityElement(array){
+    let freq ={};
+    let maxFrequent = -Infinity;
+    let maxElement;
+
+    for(let i=0; i<array.length; i++){
+        freq[array[i]] = (freq[array[i]] || 0)+1;
+    }
+    for(let j in freq){
+        if(freq[j] > maxFrequent){
+            maxFrequent = freq[j];
+            maxElement = j;
+        }
+    }
+    let n = Math.floor(array.length/2)
+
+if(maXfreq>=n){
+    return(maxElement,maXfreq);
+}else{
+    return("No majority element");
+}
