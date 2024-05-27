@@ -1,0 +1,12 @@
+function sortedOrNot(array){
+    let isSorted = true;
+    for(let i=0; i<array.length; i++){
+        if(array[i]>array[i+1]) isSorted = false;
+    }
+    if(isSorted){
+        console.log(`Array is sorted`);
+    }else{
+
+        console.log(`Array is unsorted`);
+    }
+}
