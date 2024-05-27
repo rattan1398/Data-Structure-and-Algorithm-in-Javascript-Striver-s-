@@ -1,0 +1,8 @@
+function leastAppear(array) {
+    /*There is the property of XOR that a^a=0, 
+    so the XOR of single element will always return itself*/
+    let xor = 0;
+    for(let i of array){
+        xor = xor ^ array[i];
+    }return xor;
+}
