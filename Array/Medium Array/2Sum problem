@@ -1,0 +1,13 @@
+function twoSum(array,k){
+
+    let seen = new Map();
+    for(let i=0; i<array.length; i++){
+        let number = k - array[i];
+        if(number in seen){
+            return [seen[number],i];
+        }
+
+        seen[array[i]] = i;
+    }
+    return [];
+}
