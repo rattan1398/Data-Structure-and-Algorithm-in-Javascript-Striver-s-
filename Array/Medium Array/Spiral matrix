@@ -1,0 +1,33 @@
+function spiral(matrix){
+    let n=matrix.length;
+    let m=matrix[0].length;
+  
+    let matrix1 = [];
+    let top=0, bottom=n-1;
+    let left=0; right=m-1;
+  
+    while(left<=right && top<=bottom){
+      //right
+      for(let i=left; i<=right; i++){
+        matrix1.push(matrix[top][i]);
+      }top++;
+      //bottom
+      for(let i=top; i<=bottom; i++){
+        matrix1.push(matrix[i][right]);
+      }right--;
+      if(top<=bottom){
+        //left
+        for(let i=right; i>=left; i--){
+          matrix1.push(matrix[bottom][i]);
+        }bottom--;
+      }
+      if(left<=right){
+        //top
+        for(let i=bottom; i>=top; i--){
+          matrix1.push(matrix[i][left]);
+        }left++;
+      }
+    }
+    return matrix1;
+  
+}
