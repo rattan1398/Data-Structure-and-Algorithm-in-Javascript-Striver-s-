@@ -1,0 +1,13 @@
+function selectionSort(array){
+    for(let i=0; i<array.length-1; i++){ //iterate through the array till array.length-1
+        let minIndex = i; //firstly take the minnimum index i i.e. 0 initially
+        for(let j=i;j<array.length;j++){ //iterate to find the minimum element index
+            if(array[j]<array[minIndex]){
+                minIndex = j; //then update the minimum index to j.
+            }
+        }
+
+        [array[minIndex],array[i]] = [array[i],array[minIndex]]; //swap the value to go further
+        
+    }return array;
+}
