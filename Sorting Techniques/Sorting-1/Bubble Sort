@@ -1,0 +1,9 @@
+function bubbleSort(array){
+    for(let i=array.length-1; i>=1; i--){ //iterate through the array from array.length-1 to 1.
+        for(let j=0; j<=i-1; j++){ //iterate through array from 0th index to i;
+            if(array[j]>array[j+1]){ //if the element is greater than it's adjavent element.
+                [array[j],array[j+1]] = [array[j+1],array[j]]; //swap them
+            }
+        }
+    }return array;
+}
