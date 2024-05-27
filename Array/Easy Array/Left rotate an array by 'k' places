@@ -1,0 +1,7 @@
+function rotate(array){
+    let k = prompt("Enter the number of rotations:");
+    k = k % array.length;
+    let start = array.slice(0,  array.length - k);
+    let end = array.slice(array.length - k, array.length);
+    return end.concat(start);
+}
