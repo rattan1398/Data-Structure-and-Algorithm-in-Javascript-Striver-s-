@@ -1,0 +1,13 @@
+function consectiveOnes(array){
+    let count=0;
+    let max=0;
+    for(let i=0; i<array.length; i++){
+        if(array[i] === 1){
+            count++;
+        }
+        else{
+            max = Math.max(count,max);
+            count=0;
+        }
+    }return Math.max(count,max);
+}
