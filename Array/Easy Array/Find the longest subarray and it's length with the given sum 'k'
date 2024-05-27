@@ -1,0 +1,27 @@
+function longestSubarray(array,k){
+    let prefixSum = new Map();
+    prefixSum.set(0,-1); //hashing map has intitially has sum 0 at index -1;
+
+    let sum=0;
+    let maxLen=0;
+    let maxSubArray=[];
+
+    for(let i=0; i<array.length; i++){
+        sum+=array[i];
+
+        if(prefixSum.has(sum-k)){
+            let len = i-prefixSum.get(sum-k);
+            if(maxLen<len){
+                maxLen = len;
+                maxSubArray = array.slice(prefixSum.get(sum-k)+1,i+1);
+            }
+        }
+
+        prefixSum.set(sum,i)
+    }
+    if(maxLen === 0){
+        return[0,[]]
+    }
+
+    return  [maxLen,maxSubArray];
+}
