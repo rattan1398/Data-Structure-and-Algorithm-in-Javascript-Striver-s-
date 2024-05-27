@@ -1,0 +1,5 @@
+function removeDuplicates(array){
+    let newArray = new Set(array);
+    let  finalArray= Array.from(newArray);                                                            f
+    return finalArray;
+}
