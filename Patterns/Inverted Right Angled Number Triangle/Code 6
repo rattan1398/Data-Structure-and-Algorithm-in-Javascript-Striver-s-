@@ -1,0 +1,10 @@
+let n = prompt("Enter the number of rows:");
+for(let i=0; i<n; i++){       
+    let a=1; //By initiating 'a' inside the loop of row, the sequence remains unchanged.
+    let star='';
+    for(let j=n; j>i; j--){
+        star += a;
+        a+=1; //Incrementing the value of 'a' inside the column's loop, we get the sequence 12345, 1234 and so on.... 
+    }
+    console.log(star);
+}
