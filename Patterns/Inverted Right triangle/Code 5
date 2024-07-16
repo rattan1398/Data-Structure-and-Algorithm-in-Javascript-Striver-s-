@@ -1,0 +1,8 @@
+let n = prompt("Enter the number of rows:");
+for(let i=0; i<n; i++){
+    let star='';
+    for(let j=n; j>i; j--){ //We just set the column range from 'n' to 'i' and decrases by 1 after each row iteration.
+        star += "* ";
+    }
+    console.log(star);
+}
