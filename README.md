@@ -42,6 +42,25 @@
 
     <img src="https://example.com/sorting-techniques.png" alt="Sorting Techniques">
 
+    <h2>Repository Structure</h2>
+    <pre><code>.
+├── Patterns
+│   ├── rightTriangle.js
+│   ├── pyramid.js
+│   └── ...
+├── Sorting
+│   ├── bubbleSort.js
+│   ├── insertionSort.js
+│   └── ...
+├── Array
+│   ├── easy
+│   │   ├── someEasyProblem.js
+│   │   └── ...
+│   ├── medium
+│   │   ├── someMediumProblem.js
+│   │   └── ...
+└── README.md
+    </code></pre>
 
     <h2>How to Contribute</h2>
     <p>Feel free to fork this repository, make your changes, and submit a pull request. Contributions are welcome!</p>
@@ -52,6 +71,9 @@
         <li>Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
         <li>Open a pull request</li>
     </ol>
+
+    <h2>License</h2>
+    <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
     <img src="https://example.com/javascript-logo.png" alt="JavaScript">
     <hr>
