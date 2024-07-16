@@ -8,7 +8,8 @@ To enter or take input from the user, use prompt
         const prompt = require("prompt-sync")();
 
 Concepts of the DSA that are included till now:
-        1. All Sorting Techniques
-        2. Array
+        1. Patterns: There are 17 different patterns including Right traingle, Pyramids and many more...
+        2. All Sorting Techniques: Bubble, Insertion, Selection, Merge and Quick..
+        3. Array
             a. Easy Array Concepts
             b. Medium Array Concepts
