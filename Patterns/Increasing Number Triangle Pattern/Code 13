@@ -1,0 +1,13 @@
+let n = prompt("Enter the number of rows: ");
+let a=1;
+
+for(let i=1; i<=n; i++){
+    let star='';
+
+    for(let j=1; j<=i;j++){
+        star +=a;
+        a+=1; //Increment 'a' after every iteration..
+    }
+    console.log(star);
+
+}
