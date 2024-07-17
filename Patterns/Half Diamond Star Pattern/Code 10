@@ -1,0 +1,17 @@
+let n = prompt("Enter the number of rows: ");
+
+// For upper pyramid
+for(let i=0; i<n; i++){
+    let star='';
+    for(let k=0; k<=i; k++){
+        star += '* ';
+    }console.log(star);
+}
+
+// For lower pyramid
+for(let i=1; i<n; i++){
+    let star='';
+    for(let k=n; k>i; k--){
+        star += '* ';
+    }console.log(star);
+}
