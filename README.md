@@ -8,7 +8,7 @@
 <p>'const prompt = require("prompt-sync")();'</p> 
 <h3>Concepts Covered</h3> 
 <ol>
- <li><h4>Patterns: </h4></a>There are 17 different patterns, including right triangles, pyramids, and many more.</li>
+ <li><h4><a href="Patterns" target="blank">Pattern</a></h4></a>There are 17 different patterns, including right triangles, pyramids, and many more.</li>
  <li><h4>Sorting Techniques: </h4><ul><li>Bubble Sort</li> <li>Insertion Sort</li> <li>Selection Sort</li> <li>Merge Sort</li> <li>Quick Sort</li></ul></li> 
  <li><h4>Array</h4> <ul><li>Easy Array Concepts</li> <li>Medium Array Concepts</li></ul></li>
  <h3>How to Contribute Feel free to fork this repository, make your changes, and submit a pull request. Contributions are welcome!</h3> 
@@ -18,7 +18,6 @@
   <li>Push to the branch (git push origin feature/AmazingFeature)</li>
   <li>Open a pull request</li> 
   <h3>Happy Coding!</h3>
-  <a href="Patterns" target="blank">Pattern</a>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
