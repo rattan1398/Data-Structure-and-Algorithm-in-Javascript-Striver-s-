@@ -1,0 +1,13 @@
+let n= prompt("Enter the number of rows: ");
+for(let i=0; i<n; i++){
+    let star = '';
+    //For the space
+    for(let j=0; j<i; j++){
+        star += ' ';
+    }
+    //For the stars
+    for(let k=n; k>i; k--){
+        star += '* ';
+    }
+    console.log(star);
+}
