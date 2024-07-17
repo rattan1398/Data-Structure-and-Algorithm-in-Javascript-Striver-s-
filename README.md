@@ -5,7 +5,4 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://linkedin.com/in/kartik rattan" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="kartik rattan" height="30" width="40" /></a>
-</p>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=rattan1398&" alt="rattan1398" /></p>
+<a href="https://linkedin.com/in/kartik rattan" target="blank">
