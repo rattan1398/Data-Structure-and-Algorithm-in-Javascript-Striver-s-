@@ -1,0 +1,24 @@
+let n = prompt("Enter the number of rows: ");
+let space = (2*n)-1 //End of range for the space
+
+for(let i=1; i<=n; i++){
+    let star='';
+
+    //For left-side
+    for(let j=1; j<=i;j++){
+        star +=j;
+    }
+
+    //For space between them
+    for(let j=1; j<space; j++){
+        star +=' ';
+    }
+
+    //For right-side
+    for(let j=i;j>=1;j--){
+        star +=j;
+    }
+    console.log(star);
+    space-=2; //After each row the space between them decreases by 2.
+
+}
