@@ -1,0 +1,14 @@
+let n = prompt("Enter the number of rows: ");
+let a=1;
+for(let i=0; i<n; i++){
+    let star='';
+
+    if(i%2==0)a=1; //If row'th index is even, go for 1
+    else a=0; //else go for 0
+
+    for(let j=0; j<=i;j++){
+        star+=a;
+        a=1-a; //To make next element 0 if previous one is 1 and vice versa..
+    }
+        console.log(star);
+}
