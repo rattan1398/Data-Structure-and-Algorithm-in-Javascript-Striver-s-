@@ -1,0 +1,9 @@
+let n = prompt("Enter the number of rows: ");
+
+for(let i=n-1; i>=0; i--){ //Outer loop iterates in reverse order, elements in the last row prints first
+    let star ='';
+    for(let j=i; j<n; j++){
+        star += String.fromCharCode(65 + j); //Inner loop i.e. for column printts the sequence as required..
+    }
+    console.log(star);
+}
