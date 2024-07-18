@@ -1,0 +1,38 @@
+//Remember 'n' is the half the total number of rows and the 'n' is only given in input.
+let n = prompt("Enter the length of the row: ");
+
+//For upper pattern
+let spaces = (2*n)-2; //The end of range for the space required in upper pyramid
+for(let i=n-1; i>=0; i--){ 
+    let star='';
+
+    for(let j = 1; j <= n - i; j++){ //This loop prints the left pattern
+        star+='*';
+    }
+    for(let j=0; j<spaces; j++){ //This is for space between both of them
+        star+=' ';
+    }
+    for(let j = 1; j <= n - i; j++){ //This loop prints the right pattern
+        star+='*';
+    }
+    spaces-=2;
+    console.log(star);
+}
+
+//For lower pattern
+let space=2; //The end of range for the space required in lower pyramid
+for(let i=0; i<n; i++){ //Reverse the row pattern of upper pattern to get the lower pattern
+    let star='';
+
+    for(let j = 2; j <= n - i; j++){ //This loop prints the left pattern
+        star+='*';
+    }
+    for(let j=0; j<space; j++){ //This is for space between both of them
+        star+=' ';
+    }
+    for(let j = 2; j <= n - i; j++){ //This loop prints the right pattern
+        star+='*';
+    }
+    space+=2;
+    console.log(star);
+}
