@@ -1,0 +1,22 @@
+let n = prompt("Enter the length of the row: ");
+
+for(let i=1; i<=n; i++){
+    let star='';
+    // For the space 
+    for(let j=n; j>=i; j--){
+        star += ' ';
+    }
+    //For the ascending pattern
+    for (let j = 0; j < i; j++) {
+        star += String.fromCharCode(65 + j);
+    }
+
+    /*For more clarity try to run ascending loop and understand 
+    the output pattern and then go for descending one.*/
+
+    //For the descending pattern
+    for (let j = i - 2; j >= 0; j--) {
+        star += String.fromCharCode(65 + j);
+    }
+    console.log(star);
+}
