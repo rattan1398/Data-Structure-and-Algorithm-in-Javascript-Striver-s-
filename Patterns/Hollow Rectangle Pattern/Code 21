@@ -1,0 +1,12 @@
+let n = prompt("Enter the length of the row: ");
+for(let i=1; i<=n; i++){
+    let star='';
+    for(let j=1; j<=n; j++){
+        if(i==1 || i==n || j==1 || j==n){ //Print '*' if these conditions met
+            star += '*';
+        }else{ 
+            star += ' ';
+        }
+    }    
+    console.log(star);
+}
