@@ -1,0 +1,25 @@
+function closestThreeSum(array,target){
+    let n = array.length;
+    array.sort((a,b)=>a-b); //First sort the array
+    let closestSum=array[0]+array[1]+array[2]; //Let assume the closest sum elements will be first 3 elements initially.
+
+    for(let i=0; i<n; i++){
+        let j=i+1;
+        let k=n-1;
+
+        while(j<k){
+            let currentSum = array[i]+array[j]+array[k]; //Current sum will be tany combination of elements in an array
+            if(Math.abs(closestSum-target)>Math.abs(currentSum-target)){ //If closest sum will be smaller than current sum after subtracting target.
+                closestSum=currentSum;
+            }else if(closestSum<target){ //Else if closest sum is samller than target
+                j++;
+            }else if(currentSum>target){ //Else if current sum is greater than target
+                k--;
+            }
+            else{ //If these conditions fails return current sum 
+                return currentSum;
+            }
+        }
+    }return closestSum;
+
+}
