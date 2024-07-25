@@ -1,0 +1,36 @@
+function fourSum(array,target){
+    let n = array.length;
+    let ans=[];
+    array.sort((a,b)=>a-b);
+
+    for(let i=0; i<n-3; i++){
+        if(i>0 && array[i]===array[i-1])continue;
+        for(let j=i+1; j<n-2; j++){
+            if(j>i+1 && array[j]===array[j-1])continue;
+
+            let k=j+1;
+            let l=n-1;
+
+            while(k<l){
+                let sum = array[i]+array[j]+array[k]+array[l];
+
+                if(sum===target){
+                    ans.push([array[i],array[j],array[k],array[l]]);
+                    while(k<l && array[k]===array[k+1]) k++;
+                    while(k<l && array[l]===array[l-1]) l--;
+
+                    k++;
+                    l--;
+                }else if(sum<target){
+                    k++;
+                }
+                else{
+                    l--;
+                }
+            }
+        }
+        
+        
+    }return ans;
+
+}
