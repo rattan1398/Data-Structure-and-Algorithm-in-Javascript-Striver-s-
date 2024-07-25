@@ -1,0 +1,27 @@
+//This is the optimal approach to solve the  problem
+funciton threeSum(nums){
+    let ans=[];
+    let n=nums.length;
+    nums.sort((a,b) => a-b); //First sort the array 
+
+    for(let i=0; i<n; i++){
+        if(i !== 0 && nums[i] === nums[i-1])continue; //If 'i' is not equals 0 and it's not equal to it's previous one.
+
+        let j=i+1;
+        let k=n-1;
+        while(j<k){
+            let sum = nums[i]+nums[j]+nums[k];
+            if(sum<0) j++;
+            else if(sum>0) k--;
+            else{
+                ans.push([nums[i],nums[j],nums[k]]); //Push all 3 elements into 'ans' array
+                j++;
+                k--;
+
+                while(j<k && nums[j]===nums[j-1]) j++; //Loop runs until 'j' crosses 'k' and it's not equal to it's previous one.
+                while(j<k && nums[k]===nums[k+1]) k--; //Loop runs until 'j' crosses 'k' and it's not equal to it's previous one.
+            }
+        }
+    }
+    return ans;
+}
