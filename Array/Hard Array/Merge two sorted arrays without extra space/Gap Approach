@@ -1,0 +1,43 @@
+//Gap Approach
+function swapIfGreater(arr1,arr2,ind1,ind2){
+    if(arr1[ind1]>arr2[ind2]){
+        [arr1[ind1],arr2[ind2]] = [arr2[ind2],arr1[ind1]];
+    }
+}
+
+function mergeSortedArray(arr1,arr2,n,m){
+
+    let len = n+m;
+    let gap = Math.ceil(len/2); //like (5/2)=3 in this function
+
+    while(gap>0){
+        let left=0;
+        let right=left+gap;
+        
+        while(right<len){
+            //left is in the arr1 and right is in arr2
+            if(left<n && right>=n){
+                swapIfGreater(arr1,arr2,left,right-n); //"right-n" is used to get the correct index at 'arr2' as it is 'n' more than its index according to len.
+            }
+            //Both are in arr2
+            else if(left>=n){
+                swapIfGreater(arr2,arr2,left-n,right-n);
+            }
+            //Both are in arr1
+            else swapIfGreater(arr1,arr1,left,right);
+            
+            left++,right++;
+        }
+
+        if(gap===1) break;
+
+        gap=Math.ceil(gap/2);
+    }
+}
+
+let arr1 = [1, 4, 8, 10];
+let arr2 = [2, 3, 9];
+let n = 4, m = 3;
+mergeSortedArray(arr1, arr2, n, m);
+console.log(arr1.join(" "));
+console.log(arr2.join(" "));
