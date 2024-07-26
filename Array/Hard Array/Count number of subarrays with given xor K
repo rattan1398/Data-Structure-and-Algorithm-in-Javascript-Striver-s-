@@ -1,0 +1,20 @@
+function countSubArrayXor(array,k){
+    let hashMap = new Map();
+    let count=0;
+    let xor=0; 
+    hashMap.set(xor,1); //setting the value of 0.
+
+    for(let i=0; i<array.length; i++){
+        xor = xor ^ array[i]; // prefix XOR till index i:
+
+        //By formula: x = xr^k:
+        let x= xor^k;
+        
+        // add the occurrence of xr^k to the count:
+        count += hashMap.get(x) || 0;
+
+        // Insert the prefix xor till index 'i' into the map:
+        hashMap.set(xor, (hashMap.get(xor) ||0)+1);
+    }
+    return count;
+}
