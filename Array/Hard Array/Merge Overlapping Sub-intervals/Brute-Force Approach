@@ -1,0 +1,24 @@
+//Brute-Force Approach
+function mergeOverlappingIntervals(array){
+    let n=array.length;
+    let ans=[];
+    array.sort((a,b)=> a[0]-b[0]); //Sort an array of arrays (or tuples) based on the first element of each sub-array.
+
+    for(let i=0; i<n; i++){
+        let start= array[i][0];
+        let end = array[i][1];
+        
+        /*checks if the new interval overlaps or is within the bounds of the last recorded interval in the 'ans' array. 
+        If 'end' is less than or equal to the end of the last interval.*/
+        if(ans.length && end<=ans[ans.length-1][1]) continue;
+
+        for(let j=i+1; j<n; j++){
+            if(array[j][0] <= end){
+                end = Math.max(end, array[j][1]);
+            }else break;
+
+        }
+        ans.push([start,end]);
+    }
+    return ans;
+}
