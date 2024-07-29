@@ -1,0 +1,54 @@
+function merge(array,low,mid,high){ 
+    let tempArray = []; //create an empty array
+    let left = low; //first index of the left side array
+    let right = mid+1; //first index of the right side array
+    while(left <= mid && right<=high){  //till the last element of the left-side array and last lement of the right-side array
+        if(array[left] <= array[right]){  //if left is smaller or equal, push it into earlier crerated tempArray and increment left
+            tempArray.push(array[left]);
+            left++;
+        }else{
+            tempArray.push(array[right]); //if right is smaller or equal, push it into earlier crerated tempArray and increment right
+            right++;
+        }
+    }
+    while(left <= mid){ //if element left after abive task in left-side array push as it is them at tempArray.
+        tempArray.push(array[left]);
+        left++;
+    }
+    while(right<=high){
+        tempArray.push(array[right]); //if element left after abive task in right-side array push as it is them at tempArray.
+        right++;
+    }
+    for(let i=low; i<=high; i++){ //fill original array from tempArray
+        array[i] = tempArray[i-low];
+    }
+
+}
+
+function countP(array,low,mid,high){
+    let right =mid+1;
+    let count=0;
+    for(let i=low; i<=mid; i++){
+        while(right<=high && array[i]>2*array[right]){
+            right++;
+        }
+        count += right - (mid+1);
+    }return count;
+}
+
+function mS(array, low, high) { 
+    let count=0;
+    if (low>=high) return count; //base case for stopping recursion
+    let mid = Math.floor((low + high) / 2); //mid value of the array
+    count += mS(array, low, mid); //call function from low to mid value
+    count += mS(array, mid + 1, high); //call function from mid+1 to high
+    count += countP(array,low,mid,high);//Count the number of reverse pairs
+    merge(array,low,mid,high); //call merge function   
+    return count;
+}
+
+
+function countpairs(array){
+    return mS(array,0,array.length-1);
+}
+    
