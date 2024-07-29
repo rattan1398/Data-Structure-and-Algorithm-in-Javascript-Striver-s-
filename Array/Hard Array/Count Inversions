@@ -1,0 +1,50 @@
+function merge(array,low,mid,high){
+    let temp=[];
+    let left=low; // starting index of left half of array
+    let right=mid+1; // starting index of right half of array
+    let count=0;
+
+    // storing elements in the temporary array in a sorted manner
+    while(left<=mid && right<=high){
+        if(array[left]<=array[right]){
+            temp.push(array[left]);
+            left++;
+        }else{
+            temp.push(array[right]);
+            count += mid - left +1;
+            right++;
+        }
+    }
+
+    // if elements on the left half are still left
+    while(left<=mid){
+        temp.push(array[left]);
+        left++;
+    }
+
+    // if elements on the right half are still left
+    while(right<=high){
+        temp.push(array[right]);
+        right++;
+    }
+
+    // transferring all elements from temporary to array
+    for(let i=low; i<=high; i++){
+        array[i] = temp[i-low];
+    }
+    return count;
+}
+
+function mS(array,low,high){
+    let count=0;
+    if(low>=high) return count;
+    let mid = Math.floor((low+high)/2);
+    count += mS(array,low,mid); // left half
+    count += mS(array,mid+1,high); // right half
+    count += merge(array,low,mid,high);// merging sorted halves
+    return count;
+}
+
+function countInversion(array){
+    return mS(array,0,array.length-1); // Count the number of pairs:
+}
