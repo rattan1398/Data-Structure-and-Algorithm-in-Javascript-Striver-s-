@@ -1,0 +1,18 @@
+function maxProductSubarray(array){
+    let maxProduct=array[0];
+    let minProduct=array[0];
+    let result=array[0];
+
+    for(let i=1; i<array.length; i++){
+        if(array[i]<0){
+            // Swap maxProduct and minProduct
+            [maxProduct,minProduct] = [minProduct,maxProduct];
+        }
+
+        maxProduct=Math.max(array[i],maxProduct*array[i]);
+        minProduct=Math.min(array[i],minProduct*array[i]);
+
+        result=Math.max(result,maxProduct);
+    }
+    return result;
+}
