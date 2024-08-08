@@ -1,0 +1,14 @@
+function upperBound(array,target){
+    let low=0, high=array.length-1;
+    let ans=array.length;
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        if(array[mid]>target){
+            ans=mid;
+            high=mid-1;
+        }else{
+            low=mid+1;
+        }
+    }
+    return ans;
+}
