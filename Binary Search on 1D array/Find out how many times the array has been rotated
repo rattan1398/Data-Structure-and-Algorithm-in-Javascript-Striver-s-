@@ -1,0 +1,21 @@
+function timesRotated(array){
+    let n=array.length;
+    let low=0, high=n-1;
+    let index=-1;
+    let ans=Infinity;
+
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+
+        if(array[low]<=array[high]){
+            index=low; ans=array[low]; break;
+        }
+
+        if(array[low]<=array[mid]){
+            index=low; ans=array[low]; low=mid+1;
+        }else{
+            index=mid; ans=array[mid]; high=mid-1;
+        }
+    }
+    return index;
+}
