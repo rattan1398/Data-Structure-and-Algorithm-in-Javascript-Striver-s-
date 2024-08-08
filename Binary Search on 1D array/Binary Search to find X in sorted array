@@ -1,0 +1,13 @@
+//This solution is based on the recursion.
+function binarySearch(array,low,high,target){
+    if(low>high) return -1;
+
+    let mid=Math.floor((low+high)/2);
+    if(target===array[mid]) return mid;
+    else if(target>array[mid]) return binarySearch(array,mid+1,high,target);
+    else return binarySearch(array,low,mid-1,target);  
+}
+
+let arr=[3, 4, 6, 7, 9, 12, 16, 17];
+let target=6;
+console.log(binarySearch(arr,0,arr.length-1,target));
