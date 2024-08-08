@@ -1,0 +1,26 @@
+function floorBS(array,target){ //Largest element in the array smaller than or equal to target
+    let n=array.length;
+    let low=0, high=n-1;
+    let ans=n;
+
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        if(array[mid]<=target){ //Focus on the right half of the array
+            ans=array[mid]; 
+            low=mid+1;
+        }else high=mid-1;
+    }return ans;
+}
+function ceilBS(array,target){ //Smallest element in the array greater than or equal to target
+    let n=array.length;
+    let low=0, high=n-1;
+    let ans=n;
+
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        if(array[mid]>=target){ //Focus on the left half of the array
+            ans=array[mid];
+            high=mid-1;
+        }else low=mid+1;
+    }return ans;
+}
