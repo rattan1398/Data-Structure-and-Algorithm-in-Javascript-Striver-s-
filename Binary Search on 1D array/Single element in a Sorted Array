@@ -1,0 +1,22 @@
+function singleElement(array){
+    let n=array.length;
+    
+    if(n===1) return array[0]; //If the size of array is 1, return it's element
+    if(array[0]!==array[1]) return array[0]; //If the first element is single
+    if(array[n-1]!==array[n-2]) return array[n-1]; //If the last element is single
+
+    let low=1, high=n-2; //To avoid edge cases of checking the first and last element set the low and high like this
+    while(low<=high){
+
+        let mid=Math.floor((low+high)/2);
+
+        //If the 'mid' is either not euqal to 'mid+1' and 'mid-1'
+        if(array[mid]!==array[mid+1] && array[mid]!==array[mid-1]) return array[mid];
+
+        //If the 'mid' is at even position and 'mid+1' is odd and equal or the 'mid' is at odd position and 'mid-1' is even and equal.
+        if((mid%2===1 && array[mid]===array[mid+1] ) || (mid%2===0 && array[mid]===array[mid-1] ))low=mid+1;
+
+        //If the 'mid' is at even position and 'mid-1' is odd and equal or the 'mid' is at odd position and 'mid+1' is even and equal.
+        else high=mid-1;
+    }return -1;
+}
