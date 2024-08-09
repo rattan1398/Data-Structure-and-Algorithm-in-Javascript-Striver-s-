@@ -1,0 +1,22 @@
+//This function is used to multilply the 'mid' value till nth times
+function func(mid,n,m){
+    let ans=1;
+    for(let i=1; i<=n; i++){
+        ans*=mid; //ans=ans*mid
+        if(ans>m)return 2; //Edge case: if the value of 'ans' exceeds the 'm' value, it time to eliminate right half in 'NthRoot' function
+    }
+    if(ans===m)return 1; 
+    else return 0;
+}
+
+function NthRoot(n,m){
+    let low=1, high=m;
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        let midN=func(mid,n,m); 
+        if(midN===1)return mid; 
+        else if(midN===0) low=mid+1;
+        else high=mid-1;
+    }
+    return -1;
+}
