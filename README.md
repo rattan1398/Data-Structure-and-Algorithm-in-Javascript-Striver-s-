@@ -11,7 +11,7 @@
  <li><h4><a href="Patterns" target="blank">Pattern</a></h4></a>There are 17 different patterns, including right triangles, pyramids, and many more.</li>
  <li><h4><a href="Sorting Techniques" target="blank">Sorting Techniques: </a></h4><ul><li>Bubble Sort</li> <li>Insertion Sort</li> <li>Selection Sort</li> <li>Merge Sort</li> <li>Quick Sort</li></ul></li> 
  <li><h4><a href="Array" target="blank">Array: </a></h4> <ul><li>Easy Array Concepts</li> <li>Medium Array Concepts</li> <li>Hard Array Concepts</li></ul></li>
- <li><h4><a href="Array" target="blank">Binary Search on 1D array</a></h4>
+ <li><h4><a href="Binary Search on 1D array" target="blank">Binary Search on 1D array</a></h4>
  <h3>How to Contribute Feel free to fork this repository, make your changes, and submit a pull request. Contributions are welcome!</h3> 
  <ol><li>Fork the repository</li> 
   <li>Create your feature branch (git checkout -b feature/AmazingFeature</li> 
