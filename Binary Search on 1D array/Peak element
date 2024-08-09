@@ -1,0 +1,22 @@
+function peakElement(array){
+    let n=array.length;
+    
+    if(n===1) return 0; //If the size of array is 1, return it's index
+    if(array[0]>array[1]) return 0; //If the first element is peak
+    if(array[n-1]>array[n-2]) return n-1; //If the last element is peak
+
+    let low=1, high=n-2; //To avoid edge cases of checking the first and last element set the low and high like this
+    while(low<=high){
+
+        let mid=Math.floor((low+high)/2);
+
+        //If the 'mid' is greater than both 'mid+1' and 'mid-1'
+        if(array[mid]>array[mid+1] && array[mid]>array[mid-1]) return mid;
+
+        //If the 'mid' is only greater than the previous one, then eliminates the left half
+        if( array[mid]>array[mid-1] )low=mid+1;
+
+        //If the 'mid' is only greater than the next one, then eliminates the right half
+        else high=mid-1;
+    }return -1;
+}
