@@ -1,0 +1,26 @@
+function maxEle(piles){ //To find the max Element from the piles
+    let max=piles[0];
+    for(let i=1; i<piles.length; i++){
+        max=Math.max(max,piles[i]);
+    }return max;
+}
+
+function reqTime(piles,hours){ //Required time to eat each pile of bananas
+    let time=0;
+    for(let i=0; i<piles.length; i++){
+        time+=Math.ceil(piles[i]/hours);
+    }return time;
+}
+
+function kokoMelon(piles,h){ //Using binary search to minimise the iteration
+    let low=1,high=maxEle(piles); //High will be set to the max Element
+    while(low<=high){
+
+        let mid=Math.floor((low+high)/2);
+        let totalhrs=reqTime(piles,mid); //Total hrs 
+        if(totalhrs<=h)high=mid-1;
+        else low=mid+1;
+    }
+
+    return low;
+}
