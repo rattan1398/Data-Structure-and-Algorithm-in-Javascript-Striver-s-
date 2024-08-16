@@ -1,0 +1,30 @@
+function possible(array,day,m,k){ //This function find that if the adjacent bloomed roses can fit to make the bouquets or not
+    let count=0, nOfBoq=0;
+    for(let i=0; i<array.length; i++){
+        if(array[i]<=day) count++; //If the 'mid' is greater or equal to the element, count+=1;
+        else{ //else find the number of bouquets will make, until this index number and make count=0
+            nOfBoq+=Math.floor(count/k);
+            count=0;
+        }
+    }
+    nOfBoq+=Math.floor(count/k); //At the end check if the bouquet is possible or not
+    return nOfBoq>=m; //Return true that required bouquets can be possible
+}
+
+function roseGarden(array,m,k){
+    if(array.length<m*k) return-1;
+
+    let max=-Infinity, min=Infinity; //Find the min and max Elements from the array
+    for(let i=0; i<array.length; i++){
+        max=Math.max(max,array[i]); 
+        min=Math.min(min,array[i]);
+    }
+
+    let low=min, high=max;
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        if(possible(array,mid,m,k)) high=mid-1; //If it is possible go and check for minimum is present or not.
+        else low=mid+1; //Else go to find the possible one
+    }return low;
+
+}
