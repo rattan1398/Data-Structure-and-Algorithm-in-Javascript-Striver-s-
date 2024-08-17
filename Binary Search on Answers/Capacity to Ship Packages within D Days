@@ -1,0 +1,22 @@
+const findDays = function(weights,cap){ //Find the total number of days with capacity as mid
+    let days=1, load=0;
+    for(let i=0; i<weights.length;i++){
+        if(load+weights[i]>cap){ //If the load(weight already loaded to the ship on the same day) + Weights[i] > capacity(mid), Shifted to the next day and load = weights[i]
+            days+=1;
+            load=weights[i];
+        }else load+=weights[i]; //Else Increase the load by weights[i]
+    }return days;
+}
+
+function capacity(weights,d){
+    let low=Math.max(...weights); //To find the max of all elements(The spreading(...) operation iterates through the array once, making the overall time complexity linear)
+    let high=weights.reduce((sum,weight) => sum+weight,0); /*This code uses the reduce method to iterate through the array, accumulating the sum of its elements. 
+    The iteration happens once, making the overall time complexity linear.*/
+
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        let totalDays=findDays(weights,mid);
+        if(totalDays<=d)high=mid-1; 
+        else low=mid+1;
+    }return low;
+}
