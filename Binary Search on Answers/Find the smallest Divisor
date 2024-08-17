@@ -1,0 +1,22 @@
+function dividedSum(array,k){ //This function finds the total sum after the division of each element with mid
+    let sum=0;
+    for(let i=0;i<array.length;i++){
+        sum+=Math.ceil(array[i]/k); //We want the ceil value
+    }
+    return sum;
+}
+
+function smallestDivisor(array,limit){
+    let max=array[0]; //Find the max element for high
+    for(let i=0; i<array.length; i++){
+        max=Math.max(max,array[i]);
+    }
+    let low=1,high=max;
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        let totalSum=dividedSum(array,mid);
+        if(totalSum<=limit){ //If total sum is in the limit
+            high=mid-1;
+        }else low=mid+1;
+    }return low;
+}
