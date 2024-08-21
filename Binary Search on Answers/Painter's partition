@@ -1,0 +1,23 @@
+function countPainters(array,timeTaken){ //This function counts the number of time the array splited 
+    let painters=1, totalTime=0;
+    for(let i=0;i<array.length;i++){
+        if(totalTime+array[i]<=timeTaken){ //If the total time + that element is in the limit of the mid, update the totalTime 
+            totalTime+=array[i];
+        }else{ //Else increase the painters by 1 ans the total time will be that array's element
+            painters++;
+            totalTime=array[i];
+        }
+    }return painters; 
+}
+
+function painterPartitions(array,k){
+    let low=Math.max(...array);
+    let high=array.reduce((a,b)=>a+b,0);
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        let p=countPainters(array,mid);
+        if(p>k)low=mid+1; 
+        else high=mid-1;
+    }
+    return low;
+}
