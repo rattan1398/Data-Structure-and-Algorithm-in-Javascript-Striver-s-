@@ -1,0 +1,24 @@
+function countStudents(array,pages){ //Count the number of students, according to number of pages
+    let count=1,noOfpages=0;
+    for(let i=0;i<array.length;i++){
+        if(noOfpages+array[i]<=pages){ //If the number of pages doesn't exceeds the limit(mid) then add pages 
+            noOfpages+=array[i];
+        }else{ //Else go for allocation for another student
+            count++;
+            noOfpages=array[i];
+        }
+    }return count; //return the number of statisfied student according to pages 
+}
+
+function allocateBoooks(array,m){
+    if(m>n) return -1; //Edge case: If the number os students > no of books available
+    let low=Math.max(...array);
+    let high=array.reduce((sum,total) => sum+total,0);
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        let students=countStudents(array,mid);
+        if(students>m) low=mid+1; 
+        else high=mid-1;
+    }
+    return low;
+}
