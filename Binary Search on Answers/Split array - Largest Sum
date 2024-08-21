@@ -1,0 +1,23 @@
+function countPartitions(array,maxSum){ //This function counts the number of time the array splited 
+    let partitions=1, arraySum=0;
+    for(let i=0;i<array.length;i++){
+        if(arraySum+array[i]<=maxSum){ //If the subArray sum + that element is in the limit of the mid, update the arraySum or add the element in that Subarray
+            arraySum+=array[i];
+        }else{ //Else increase the partitions by 1 and subarray is end at that element
+            partitions++;
+            arraySum=array[i];
+        }
+    }return partitions; 
+}
+
+function largestSum(array,k){
+    let low=Math.max(...array);
+    let high=array.reduce((a,b)=>a+b,0);
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        let p=countPartitions(array,mid);
+        if(p>k)low=mid+1; 
+        else high=mid-1;
+    }
+    return low;
+}
