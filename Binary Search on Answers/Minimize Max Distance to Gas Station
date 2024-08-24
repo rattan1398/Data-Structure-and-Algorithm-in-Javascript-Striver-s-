@@ -1,0 +1,24 @@
+function numberOfGasStations(array,dist){ //This function is used to find how many stations can fit in given mid or dist
+    let count=0;
+    for(let i=1; i<array.length; i++){
+        const numberInBetween = Math.floor((array[i]-array[i-1])/dist); //NUmber of gas stations can fit between adjacent elements
+        if((array[i]-array[i-1]) === dist*numberInBetween) count+=numberInBetween-1; //If they r equal to dist*numberInBetwen 
+        else count+=numberInBetween;
+    }
+    return count;
+}
+
+function minimiseMaxDistance(array,k){
+    let low=0,high=0;
+    for(let i=0; i<array.length-1; i++){ //High will be the max differnce between the adjacent elements among the array
+        high = Math.max(high, array[i+1]-array[i]);
+    }
+    const diff = 1e-6; //10^-6
+    while(high-low>diff){
+        const mid=(high+low)/2.0;
+        const cnt = numberOfGasStations(array,mid);
+        if(cnt>k) low=mid; //If the gasstations are more than k, eliminate left half
+        else high=mid;
+    }
+    return high;
+}
