@@ -1,0 +1,24 @@
+function kthElement(array1,array2,m,n,k){
+
+    if(m>n) return kthElement(array2,array1,n,m,k); //To decrease complexity, we always take the shorter length array frst 
+    let low=Math.max(0,k-n),high=Math.min(k,m);
+    let left=k; //Left side of the symmetery contains k elements
+    while(low<=high){
+        let mid1=Math.floor((low+high)/2);
+        let mid2=left-mid1;
+        let l1=-Infinity,l2=-Infinity;
+        let r1=Infinity,r2=Infinity;
+        if(mid1<m) r1=array1[mid1];
+        if(mid2<n) r2=array2[mid2];
+        if(mid1-1>=0) l1=array1[mid1-1];
+        if(mid2-1>=0) l2=array2[mid2-1];
+
+        if(l1<=r2 && l2<=r2){
+            return Math.max(l1,l2);
+        }
+        else if(l1>r2) high=mid1-1;
+        else low=mid1+1;
+    }
+    return 0;
+
+}
