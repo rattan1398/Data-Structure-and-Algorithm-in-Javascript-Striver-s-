@@ -1,0 +1,28 @@
+function peakIn2D(matrix){
+    let n=matrix.length, m=matrix[0].length;
+    const maxOne = function (matrix,n,m,col){ //Find the max Element from the given mid column and return its row index
+        let maxx=-1, ind=-1;
+        for(let i=0; i<n; i++){
+            if(matrix[i][col]>maxx){
+                maxx=matrix[i][col];
+                ind=i;
+            }
+        }return ind;
+    }
+
+    let low=0, high=m-1;
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        let maxNum=maxOne(matrix,n,m,mid); //The index of the row of max element
+
+        let left=(mid-1>=0) ? matrix[maxNum][mid-1] :-1; /*This line checks if mid - 1 is greater than or equal to 0. 
+        If it is, left is assigned the value mat[maxRowIndex][mid - 1]. If not, left is assigned -1.*/
+        let right=(mid+1<m) ? matrix[maxNum][mid+1] :-1; /*This line checks if mid + 1 is smaller than m. 
+        If it is, rightt is assigned the value mat[maxRowIndex][mid + 1]. If not, left is assigned -1.*/
+
+        if(matrix[maxNum][mid]>left && matrix[maxNum][mid]>right) return [maxNum,mid]; //If that element is greater than all adjacent then return its index
+        else if(matrix[maxNum][mid]<right)low=mid+1;
+        else high=mid-1;
+    }
+    return [-1,-1]
+}
