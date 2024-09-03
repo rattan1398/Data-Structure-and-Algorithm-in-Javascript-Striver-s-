@@ -1,0 +1,38 @@
+const uBound = function(arr,n,x){
+    let low=0, high=n-1;
+    let ans=n;
+    while(low<=high){
+        let mid=Math.floor((low+high)/2);
+        if(arr[mid]>x){
+            ans=mid; high=mid-1;
+        } 
+        else low=mid+1;
+    }
+    return ans;
+}
+
+const countSmallerOnes = function(matrix,m,n,x){
+    let count=0;
+    for(let i=0; i<m; i++){
+        count+=uBound(matrix[i],n,x);
+    }
+    return count;
+}
+function median2Darray(matrix){
+    const m = matrix.length;
+    const n = matrix[0].length;
+    let low = Infinity, high = -Infinity;
+    for (let i = 0; i < m; i++) {
+        low = Math.min(low, matrix[i][0]);
+        high = Math.max(high, matrix[i][n - 1]);
+    }
+
+    let req = Math.floor((n * m) / 2);
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let smallEqual = countSmallerOnes(matrix, m, n, mid);
+        if (smallEqual <= req) low = mid + 1;
+        else high = mid - 1;
+    }
+    return low;
+}
