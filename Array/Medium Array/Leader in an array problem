@@ -4,8 +4,7 @@ function leader(array){
     let leader=[array[n-1]];
     for(let i=n-2;i>=0;i--){
         if(array[i]>max){
-            max=array[i];
-            leader.push(max);        
+            max=array[i];      
         }
-    }return leader;
+    }return max;
 }
