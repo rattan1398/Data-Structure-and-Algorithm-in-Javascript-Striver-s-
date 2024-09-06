@@ -1,5 +1,5 @@
 function nextPermutation(array){
-    let index=0;
+    let index=-1;
     let n=array.length;
 
     for(let i=n-2;  i>=0 ; i--) {
