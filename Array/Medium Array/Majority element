@@ -1,21 +1,13 @@
 function majorityElement(array){
-    let freq ={};
-    let maxFrequent = -Infinity;
-    let maxElement;
+    let count = 0;
+    let candidate = null;
 
-    for(let i=0; i<array.length; i++){
-        freq[array[i]] = (freq[array[i]] || 0)+1;
-    }
-    for(let j in freq){
-        if(freq[j] > maxFrequent){
-            maxFrequent = freq[j];
-            maxElement = j;
+    for (let num of nums) {
+        if (count === 0) {
+            candidate = num;
         }
+        count += (num === candidate) ? 1 : -1; //If num===candidate increment count by 1 else decrement it by 1
     }
-    let n = Math.floor(array.length/2)
 
-if(maXfreq>=n){
-    return(maxElement,maXfreq);
-}else{
-    return("No majority element");
+    return candidate;
 }
