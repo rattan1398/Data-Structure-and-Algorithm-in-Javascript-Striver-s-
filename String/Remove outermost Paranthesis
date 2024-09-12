@@ -1,0 +1,12 @@
+function removeOutermostParanthesis(s){
+    let result='', balance=0; //result-Empty String and balance-Counting variable
+    for(let i of char){ //Of is used to iterate the characters of s
+        if(i==='('){
+            if(balance>0) result+='('; //If the balance is not 0, add paranthesis to result
+            balance++; //increment balance
+        }else{
+            balance--; //decrement balance
+            if(balance>0) result+=')';
+        }
+    }return result;
+}
