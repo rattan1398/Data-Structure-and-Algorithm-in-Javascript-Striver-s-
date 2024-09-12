@@ -1,0 +1,7 @@
+function reverse(s){
+  return s.trim().split(/\s+/).reverse().join(' ');
+}
+/*trim(): Removes any leading or trailing whitespace.
+split(/\s+/): Splits the string by one or more spaces (handles multiple spaces between words).
+reverse(): Reverses the order of words.
+join(' '): Joins the array of words back into a string with a single space between words.*/
