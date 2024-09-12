@@ -13,7 +13,8 @@
  <li><h4><a href="Array" target="blank">Array: </a></h4> <ul><li>Easy Array Concepts</li> <li>Medium Array Concepts</li> <li>Hard Array Concepts</li></ul></li>
  <li><h4><a href="Binary Search on 1D array" target="blank">Binary Search on 1D array</a></h4></li>
  <li><h4><a href="Binary Search on Answers" target="blank">Binary Search on Answers</a></h4></li>
-<li><h4><a href="BS on 2D Arrays" target="blank">BS on 2D Arrays</a></h4></li></ol>
+<li><h4><a href="BS on 2D Arrays" target="blank">BS on 2D Arrays</a></h4></li>
+<li><h4><a href="String" target="blank">String</a></h4></li></ol>
    
  <h3>How to Contribute Feel free to fork this repository, make your changes, and submit a pull request. Contributions are welcome!</h3> 
  <ol><li>Fork the repository</li> 
