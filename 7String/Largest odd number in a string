@@ -1,8 +1,0 @@
-function largestOddSub(s){
-  for(let i=s.length-1; i>=0; i++){
-      if(parseInt(s[i])!2==0){ //Parse each character and check if it is odd or not
-          return s.substring(0,i+1); //return from 0 to i+1 index
-      }
-  }
-  return "";
-}
