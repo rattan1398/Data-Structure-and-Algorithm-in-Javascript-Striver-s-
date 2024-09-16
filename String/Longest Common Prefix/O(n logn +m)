@@ -1,0 +1,14 @@
+function longestCommonPrefix(s){
+  if(s.length === 0) return "";
+
+  s.sort();
+  let first=s[0], last=s[s.length-1];
+  let minlength=Math.min(first.length; last.length);
+
+  let i=0;
+  while(i<minlength && first[i]===last[i]){
+      i++;
+  }
+  if(i === 0 )return "";
+  return first.substring(0,i+1);
+}
