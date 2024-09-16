@@ -1,0 +1,15 @@
+function longestCommonPrefix(s){
+    if(s.length===0) return ""; //If the string length is 0, the return ""
+
+    let prefix=s[0];
+    for(let i=1; i<s.length; i++){
+        /*This checks whether the current string strs[i] starts with the prefix. 
+        The method indexOf(prefix) returns 0 if the string strs[i] starts with the prefix. If it doesn't, the loop continues. */
+        while(s[i].indexOf(prefix)!==0){ 
+            prefix=prefix.substring(0,prefix.length-1); /*The idea here is that if the current string does not start with prefix, 
+            we reduce the prefix by one character at a time until it matches the start of the string or becomes empty*/
+
+            if(prefix==="") return "";
+        }
+    }return prefix;
+}
