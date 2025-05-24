@@ -1,4 +1,4 @@
-<h1 align="center"> Data Structure and Algorithm in Javascript Striver's</h1>
+<h1 align="center"> Data Structure and Algorithm in Javascript</h1>
 <h3>Hey everyone,</h3> 
 <p>This respository is created for the solutions of the Data structure and Algorithm questions picked up mostly from the Striver's Takes-uh-forward A2Z DSA Sheets and also the solutions of the Leetcode Questions in the Javascript programming language. All the DSA concepts based solutions, i will try to add as soon as I will solve them through Brute force approach to Better to Optimal approach. This will be my First detailed repository.</p> 
 <h3>Getting Started </h3>
